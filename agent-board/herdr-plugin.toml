@@ -1,0 +1,36 @@
+id = "demo.agent-board"
+name = "Agent Board"
+version = "0.1.0"
+min_herdr_version = "0.9.5"
+description = "A region listing every agent and its status; press a number to jump to it"
+platforms = ["linux", "macos"]
+
+[[actions]]
+id = "toggle"
+title = "Open or close the agent board"
+contexts = ["global"]
+command = ["bash", "toggle.sh", "board"]
+
+[[actions]]
+id = "toggle-strip"
+title = "Open or close the agent strip at the bottom"
+contexts = ["global"]
+command = ["bash", "toggle.sh", "strip"]
+
+[[regions]]
+id = "board"
+title = "Agents"
+edge = "right"
+size = 34
+min_size = 24
+max_size = 60
+command = ["bash", "agent-board.sh"]
+
+[[regions]]
+id = "strip"
+title = "Agents"
+edge = "bottom"
+size = 8
+min_size = 4
+max_size = 20
+command = ["bash", "agent-board.sh"]
